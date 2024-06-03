@@ -86,4 +86,9 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
->>>>>>> deb9db92dd56fcbafc425568e843c580ef19b4b0
+
+// Smooth scroll back to top
+backToTopButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

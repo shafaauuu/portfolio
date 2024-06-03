@@ -313,26 +313,28 @@ body:not(.user-is-tabbing) a:focus {
     background-color: var(--pink);
     border-radius: 50%;
     z-index: 10;
-    visibility: hidden;
-    transition: all .4s;
-}
-
-.back-to-top__image {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially fully transparent */
+    transform: scale(0); /* Initially scaled down */
+    transition: all 0.4s;
+  }
+  
+  .back-to-top__image {
     height: 70%;
-}
-
-@media(max-width: 900px) {
+  }
+  
+  @media (max-width: 900px) {
     .back-to-top {
-        right: 2rem;
+      right: 2rem;
     }
-}
-
-@media(max-width: 500px) {
+  }
+  
+  @media (max-width: 500px) {
     .back-to-top {
-        right: 1rem;
+      right: 1rem;
     }
-}
-
+  }
+    
 /* --------------------------------------- */
 /* ----- Navigation ----- */
 /* --------------------------------------- */
@@ -1226,4 +1228,3 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-medium) 0;
     } 
 }
->>>>>>> deb9db92dd56fcbafc425568e843c580ef19b4b0
