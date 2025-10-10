@@ -3,58 +3,266 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title> Shafira Aulia Yasmin | Informatics Student, Jakarta.</title>
+  <meta name="description" content="Shafira Aulia Yasmin - AI Specialist, Web Developer, and Software Engineer Portfolio" />
+  <meta name="author" content="Shafira Aulia Yasmin" />
+  <title>Shafira Aulia Yasmin | Informatics Student, Jakarta.</title>
   <!-- Favicon-->
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />  <!-- Font Awesome icons (free version)-->
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
 
   <style>
+    :root {
+      --primary-color: #8E3E63;
+      --secondary-color: #2c3e50;
+      --accent-color: #f39c12;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
     .portfolio-image {
       object-fit: cover;
       height: 250px;
       width: 100%;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
     .portfolio-image:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
   
     .portfolio-item {
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-5px);
     }
   
     .portfolio-item-caption {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(142, 62, 99, 0.85);
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-item-caption {
+      background-color: rgba(142, 62, 99, 0.95);
     }
   
     .divider-custom-icon {
-      color: #f39c12;
+      color: var(--accent-color);
     }
-
+    
+    .masthead {
+      padding-top: calc(6rem + 74px);
+      padding-bottom: 6rem;
+      background: linear-gradient(135deg, #8E3E63 0%, #2c3e50 100%);
+      position: relative;
+    }
+    
+    .masthead::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23smallGrid)" /></svg>');
+      opacity: 0.5;
+    }
+    
+    .masthead-avatar {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 5px solid white;
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .masthead-avatar:hover {
+      transform: scale(1.05);
+    }
+    
+    .masthead-heading {
+      font-weight: 700;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .masthead-subheading {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-top: 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-social {
+      border-radius: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-social:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-xl {
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-xl:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      transition: all 0.3s ease;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    .navbar-shrink {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-link {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 80%;
+      left: 10%;
+    }
+    
+    .page-section {
+      padding: 6rem 0;
+    }
+    
+    .page-section-heading {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .contact__info p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .footer {
+      padding: 5rem 0;
+    }
+    
+    .copyright {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    
     h4 {
       text-align: center;
-      font-size: 24px; /* Default for larger screens */
+      font-size: 24px;
       margin: 20px;
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 600px) {
+    }
+    
+    @media (max-width: 600px) {
       h4 {
-          font-size: 18px; /* Smaller font for mobile */
-          margin: 15px; /* Adjust spacing for mobile */
+        font-size: 18px;
+        margin: 15px;
       }
+    }
+    
+    .skill-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      border-radius: 50px;
+      background-color: rgba(142, 62, 99, 0.1);
+      color: var(--primary-color);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-badge:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .portfolio-modal-title {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .portfolio-modal .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      font-size: 24px;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px);
+      background-color: white;
+      color: var(--primary-color);
     }
   </style>
 </head>
@@ -63,13 +271,16 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="#page-top">Fira's Portfolio</a>
+    <a class="navbar-brand" href="#page-top">
+      <span class="text-primary fw-bold">Shafira</span> Aulia Yasmin
+    </a>
     <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experience">Experience</a></li>
         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
       </ul>
@@ -80,7 +291,7 @@
 <header class="masthead bg-primary text-white text-center">
   <div class="container d-flex align-items-center flex-column">
     <!-- Masthead Avatar Image-->
-    <img class="masthead-avatar mb-5" src="./images/me.jpg" alt="..." style="border: 5px solid; border-radius: 50%"/>
+    <img class="masthead-avatar mb-5" src="./images/me.jpg" alt="Shafira Aulia Yasmin" />
     <!-- Masthead Heading-->
     <h1 class="masthead-heading text-uppercase mb-0">Shafira Aulia Yasmin</h1>
     <!-- Icon Divider-->
@@ -89,8 +300,24 @@
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
-    <!-- Masthead Subheading-->
-    <p class="masthead-subheading font-weight-light mb-0">Artificial Intelligence - Web Developer - Software Engineering</p>
+    <!-- Masthead Subheading with Typed.js -->
+    <p class="masthead-subheading font-weight-light mb-0"></p>
+    
+    <!-- Social Icons -->
+    <div class="social-icons mt-4">
+      <a class="social-icon" href="https://github.com/shafaauuu/" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="social-icon" href="https://instagram.com/shafaauuu/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a class="social-icon" href="https://www.linkedin.com/in/shafira-aulia-yasmin/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a class="social-icon" href="https://wa.me/+6283895988764" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
   </div>
 </header>
 <!-- Portfolio Section-->
@@ -104,90 +331,240 @@
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
+    
+    <!-- Portfolio Category Filters -->
+    <div class="text-center mb-5">
+      <div class="btn-group portfolio-filter" role="group">
+        <button type="button" class="btn btn-outline-primary active" data-filter="*">All</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".web">Web Development</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".ai">AI & ML</button>
+        <button type="button" class="btn btn-outline-primary" data-filter=".other">Other Projects</button>
+      </div>
+    </div>
+    
     <!-- Portfolio Grid Items-->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center portfolio-grid">
       <!-- Portfolio Item 1-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item web">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">GITA-SARPRAS</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/gita.png" alt="Project 1" />
+          <img class="img-fluid portfolio-image" src="images/gita.png" alt="GITA-SARPRAS Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Laravel</span>
+            <span class="badge bg-secondary">PHP</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 2-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item web">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">SISTERSD</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/sistersd.png" alt="Project 2" />
+          <img class="img-fluid portfolio-image" src="images/sistersd.png" alt="SISTERSD Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Laravel</span>
+            <span class="badge bg-secondary">PHP</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 3-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item ai">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Live Translation</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-3.png" alt="Project 3" />
+          <img class="img-fluid portfolio-image" src="images/project-3.png" alt="Live Translation Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-secondary">ML</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 4-->
-      <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+      <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 portfolio-item web">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Book Rent Website</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-6.png" alt="Project 4" />
+          <img class="img-fluid portfolio-image" src="images/project-6.png" alt="Book Rent Website Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Next.js</span>
+            <span class="badge bg-secondary">Firebase</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 5-->
-      <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+      <div class="col-md-6 col-lg-4 mb-5 mb-md-0 portfolio-item ai">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Cat Breed Classification</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-5.png" alt="Project 5" />
+          <img class="img-fluid portfolio-image" src="images/project-5.png" alt="Cat Breed Classification Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-secondary">TensorFlow</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 6-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item ai">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Text Document Classification</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-7.png" alt="Project 6" />
+          <img class="img-fluid portfolio-image" src="images/project-7.png" alt="Text Document Classification Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-secondary">NLP</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 7-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item other">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">ComInfo</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-2.png" alt="Project 7" />
+          <img class="img-fluid portfolio-image" src="images/project-2.png" alt="ComInfo Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Java</span>
+            <span class="badge bg-secondary">Next.js</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 8-->
-      <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal8">
+      <div class="col-md-6 col-lg-4 mb-5 portfolio-item ai">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal8">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Harry Potter Face Recognition</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-1.png" alt="Project 8" />
+          <img class="img-fluid portfolio-image" src="images/project-1.png" alt="Harry Potter Face Recognition Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-secondary">Computer Vision</span>
+          </div>
         </div>
       </div>
       <!-- Portfolio Item 9-->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
+      <div class="col-md-6 col-lg-4 portfolio-item ai">
+        <div class="portfolio-item-wrapper mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+              <h5 class="mt-3">Vehicle Tracking</h5>
+            </div>
           </div>
-          <img class="img-fluid portfolio-image" src="images/project-8.png" alt="Project 9" />
+          <img class="img-fluid portfolio-image" src="images/project-8.png" alt="Vehicle Tracking Project" />
+          <div class="portfolio-item-tags">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-secondary">YOLO</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="page-section bg-secondary text-white mb-0" id="experience">
+  <div class="container">
+    <!-- Experience Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-white">Experience</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    
+    <!-- Experience Timeline -->
+    <div class="experience-timeline">
+      <!-- Experience Item 1 -->
+      <div class="experience-container experience-left">
+        <div class="experience-content">
+          <div class="experience-date">June 2025 - Present</div>
+          <h3 class="experience-title">Quality Assurance Tester</h3>
+          <div class="experience-company">PT. Renr Teknologi Bangsa</div>
+          <ul class="experience-description">
+            <li>Conduct manual testing for all application features to ensure functionality and performance.</li>
+            <li>Perform both positive and negative testing to validate system behavior under different scenarios.</li>
+            <li>Collaborate with developers by reporting bugs, providing detailed feedback, and verifying fixes.</li>
+            <li>Prepare test cases and document test results to support continuous improvement.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Item 2 -->
+      <div class="experience-container experience-right">
+        <div class="experience-content">
+          <div class="experience-date">February 2025 - July 2025</div>
+          <h3 class="experience-title">Software Engineer Intern</h3>
+          <div class="experience-company">PT. Oneject Indonesia - Cikarang, West Java</div>
+          <ul class="experience-description">
+            <li>Built a batch record digitalization system using Flutter (frontend) and Laravel (backend).</li>
+            <li>Managed relational PostgreSQL database for large-scale production data.</li>
+            <li>Created web and app-based reporting features using Laravel.</li>
+            <li>Prepared documentation and reports using Google Workspace and Microsoft Word.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Item 3 -->
+      <div class="experience-container experience-left">
+        <div class="experience-content">
+          <div class="experience-date">August 2024 - January 2025</div>
+          <h3 class="experience-title">IT Developer Intern</h3>
+          <div class="experience-company">PT. Kimia Farma Diagnostika - Sudirman Baru, Central Jakarta</div>
+          <ul class="experience-description">
+            <li>Built an admin page by integrating frontend (Bootstrap) and backend (PHP Laravel).</li>
+            <li>Enhanced existing websites and managed software hosting using Google Cloud Storage.</li>
+            <li>Prepared reports on websites and applications using Google Workspace and Microsoft Word.</li>
+            <li>Created detailed user manuals for EUT SAP applications.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Item 4 -->
+      <div class="experience-container experience-right">
+        <div class="experience-content">
+          <div class="experience-date">August 2023 - January 2024</div>
+          <h3 class="experience-title">Lecture Assistant</h3>
+          <div class="experience-company">President University - Cikarang, West Java</div>
+          <ul class="experience-description">
+            <li>Assisted lecturers with a variety of teaching duties, including scoring assignments, supervising exams, and providing classroom support.</li>
+            <li>Successfully assisted the Faculty of Computer Science, Informatics Program to help the department achieve international accreditation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -195,43 +572,65 @@
 <section class="page-section bg-primary text-white mb-0" id="about">
   <div class="container">
     <!-- About Section Heading-->
-    <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
+    
     <!-- About Section Content-->
     <div class="row">
       <div class="col-lg-5 ms-auto">
         <p class="lead">
-          I am an enthusiastic third-year Informatics student at President University, specializing in Artificial Intelligence. 
-          With a strong passion for how AI can transform industries and enhance decision-making, my academic journey has provided me 
-          with a solid foundation in machine learning, data analysis, and programming. I aim to leverage AI’s potential to uncover 
-          valuable insights from data and contribute to innovative solutions.
-          <br><br>
-          I am actively seeking entry-level internship opportunities in the IT industry, particularly in AI, machine learning, 
-          or data science roles. I am excited to apply my skills to real-world scenarios, contribute to impactful projects, 
-          and further expand my knowledge in AI applications.
+          I am an enthusiastic Computer Science student at President University, specializing in Artificial Intelligence and Software Engineering. 
+          With a strong passion for how technology can transform industries and enhance decision-making, my academic journey has provided me 
+          with a solid foundation in machine learning, data analysis, and programming.
+        </p>
+        <p class="lead">
+          Currently working as a Quality Assurance Tester at PT. Renr Teknologi Bangsa, I ensure application functionality and performance through 
+          comprehensive testing. My experience includes software engineering, IT development, and academic assistance, giving me a well-rounded 
+          perspective on the software development lifecycle.
         </p>
       </div>
       <div class="col-lg-5 me-auto">
         <p class="lead">
           Beyond academics, I enjoy working on AI-driven personal projects and contributing to open-source initiatives. I believe 
-          in continuous learning, staying updated with the latest AI trends, and constantly improving my problem-solving capabilities.
-          <br><br>
-          In addition to my AI focus, I am proficient in front-end development, with experience in creating interactive web applications 
-          using HTML, CSS, JavaScript, and frameworks like Laravel. I look forward to combining my technical and collaborative skills 
-          in dynamic team environments, learning from industry professionals, and contributing to cutting-edge solutions.
+          in continuous learning, staying updated with the latest technology trends, and constantly improving my problem-solving capabilities.
+        </p>
+        <p class="lead">
+          My technical expertise spans both frontend and backend development, with experience in Flutter, Laravel, PostgreSQL, and cloud services.
+          I look forward to combining my technical and collaborative skills in dynamic team environments, learning from industry professionals, 
+          and contributing to cutting-edge solutions that make a positive impact.
         </p>
       </div>
-    </div>    
+    </div>
+    
+    <!-- Skills Section -->
+    <div class="text-center mt-5">
+      <h2 class="text-white mb-4">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Python</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Machine Learning</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">TensorFlow</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Flutter</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Laravel</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">PostgreSQL</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">HTML/CSS</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">JavaScript</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">PHP</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Bootstrap</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Google Cloud</div>
+        <div class="skill-badge" style="opacity: 1; transform: translateY(0);">Git</div>
+      </div>
+    </div>
+    
     <!-- About Section Button-->
-    <div class="text-center mt-4">
-      <a class="btn btn-xl btn-outline-light" href="https://drive.google.com/file/d/1G1fYCqj5EXlTi4nvdaP_-zNCyFa_WNIt/view?usp=sharing">
+    <div class="text-center mt-5">
+      <a class="btn btn-xl btn-outline-light" href="https://drive.google.com/file/d/1G1fYCqj5EXlTi4nvdaP_-zNCyFa_WNIt/view?usp=sharing" target="_blank">
         <i class="fas fa-download me-2"></i>
-        My Resume
+        Download Resume
       </a>
     </div>
   </div>
@@ -242,7 +641,7 @@
     <!-- Contact Section Heading-->
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-4">Let's Connect!</h2>
 
-    <div class="divider-custom divider-dark">
+    <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
@@ -256,11 +655,23 @@
         I'd love to hear from you and start the conversation.
       </p>
 
-      <!-- Email Links -->
-      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-3">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shafira.ay@gmail.com" target="_blank" class="btn btn-primary shadow-sm mb-2 mb-md-0 text-wrap text-center" style="white-space: normal; max-width: 250px;">
-          <i class="bi bi-envelope-fill me-2"></i>shafira.ay@gmail.com
-        </a>
+      <!-- Contact Cards -->
+      <div class="row justify-content-center mt-5">
+        <!-- Email -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="bi bi-envelope-fill text-primary" style="font-size: 2rem;"></i>
+              </div>
+              <h5 class="card-title">Email</h5>
+              <p class="card-text">Feel free to email me anytime</p>
+              <a href="mailto:shafira.ay@gmail.com" class="btn btn-outline-primary">
+                shafira.ay@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -271,14 +682,32 @@
   <div class="container">
     <div class="row justify-content-center">
       <!-- Footer Social Icons-->
-      <div class="col-lg-4 mb-5 mb-lg-0">
-        <h4 class="text-uppercase mb-4">Get in Touch</h4>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h4 class="text-uppercase mb-4">Connect With Me</h4>
         <div class="d-flex justify-content-center">
-          <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/shafaauuu/"><i class="fab fa-fw fa-github"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://instagram.com/shafaauuu/"><i class="fab fa-fw fa-instagram"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/shafira-aulia-yasmin/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://wa.me/+6283895988764"><i class="fab fa-fw fa-whatsapp"></i></a>
+          <a class="social-icon" href="https://github.com/shafaauuu/" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="social-icon" href="https://instagram.com/shafaauuu/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="social-icon" href="https://www.linkedin.com/in/shafira-aulia-yasmin/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a class="social-icon" href="https://wa.me/+6283895988764" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
+      </div>
+      
+      <!-- Footer About Text-->
+      <div class="col-lg-6">
+        <h4 class="text-uppercase mb-4">About This Portfolio</h4>
+        <p class="lead mb-0">
+          This portfolio showcases my projects and skills in AI, web development, and software engineering.
+          <br>
+          <a href="#page-top" class="text-white">Back to top</a>
+        </p>
       </div>
     </div>
   </div>
@@ -286,7 +715,10 @@
 
 <!-- Copyright Section-->
 <div class="copyright py-4 text-center text-white">
-  <div class="container"><small>Shafira Aulia Yasmin &copy; <strong>2024</strong></small></div>
+  <div class="container">
+    <small> Shafira Aulia Yasmin &copy; <span id="current-year">2024</span> | All Rights Reserved</small>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+  </div>
 </div>
 
 <!-- Portfolio Modals-->
@@ -616,8 +1048,12 @@
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
 <!-- SB Forms JS-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 

@@ -50,5 +50,49 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
+    
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 72, // Adjust for navbar height
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Add animation to portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const portfolioObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    portfolioItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        portfolioObserver.observe(item);
+    });
+    
+    // Update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 });
