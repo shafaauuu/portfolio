@@ -264,6 +264,50 @@
       background-color: white;
       color: var(--primary-color);
     }
+    
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-top: 15px;
+      font-size: 18px;
+      color: white;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .back-to-top-btn:hover {
+      transform: translateY(-5px);
+      background-color: white;
+      color: var(--primary-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scroll-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      display: none;
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .scroll-to-top:hover {
+      transform: translateY(-5px);
+      background-color: white;
+      color: var(--primary-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 
@@ -706,7 +750,9 @@
         <p class="lead mb-0">
           This portfolio showcases my projects and skills in AI, web development, and software engineering.
           <br>
-          <a href="#page-top" class="text-white">Back to top</a>
+          <a href="#page-top" class="back-to-top-btn" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+          </a>
         </p>
       </div>
     </div>
@@ -720,6 +766,11 @@
     <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
   </div>
 </div>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
 <!-- Portfolio Modals-->
 <!-- Portfolio Modal 1-->

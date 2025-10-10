@@ -106,6 +106,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const scrollPosition = window.pageYOffset;
             masthead.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
         }
+        
+        // Toggle scroll-to-top button visibility
+        const scrollToTopButton = document.querySelector('.scroll-to-top');
+        if (scrollToTopButton) {
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'flex';
+                scrollToTopButton.style.alignItems = 'center';
+                scrollToTopButton.style.justifyContent = 'center';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        }
     });
     
     // Add hover effect to portfolio items
